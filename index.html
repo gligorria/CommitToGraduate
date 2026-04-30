@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Carrera</title>
+    <link rel="stylesheet" href="carrera.css">
+</head>
+<body>
+    <header>
+        <h1>Mi Plan de Estudio <span id="progress-text">0/37 (0%)</span></h1>
+    </header>
+
+    <main class="board">
+        <div class="column">
+            <h2>Cursar</h2>
+            <div class="card-list" id="cursar">
+                <div class="card year-1" data-year="1" title="Análisis Matemático I">AMI</div>
+                <div class="card year-1" data-year="1" title="Álgebra y Geometría Analítica">AGA</div>
+                <div class="card year-1" data-year="1" title="Física I">FI</div>
+                <div class="card year-1" data-year="1" title="Inglés I">ING1</div>
+                <div class="card year-1" data-year="1" title="Lógica y Estructuras Discretas">LED</div>
+                <div class="card year-1" data-year="1" title="Algoritmos y Estructuras de Datos">AED</div>
+                <div class="card year-1" data-year="1" title="Arquitectura de Computadoras">ACO</div>
+                <div class="card year-2" data-year="2" title="Sistemas y Procesos de Negocio">SPN</div>
+                <div class="card year-2" data-year="2" title="Análisis Matemático II">AMII</div>
+                <div class="card year-2" data-year="2" title="Física II">FII</div>
+                <div class="card year-2" data-year="2" title="Ingeniería y Sociedad">IYS</div>
+                <div class="card year-2" data-year="2" title="Inglés II">ING2</div>
+                <div class="card year-2" data-year="2" title="Sintaxis y Semántica de los Lenguajes">SSL</div>
+                <div class="card year-2" data-year="2" title="Paradigmas de Programación">PDP</div>
+                <div class="card year-2" data-year="2" title="Sistemas Operativos">SOP</div>
+                <div class="card year-2" data-year="2" title="Análisis de Sistemas de Información">ASI</div>
+                <div class="card year-2" data-year="2" title="Probabilidad y Estadística">PYE</div>
+                <div class="card year-3" data-year="3" title="Economía">ECO</div>
+                <div class="card year-3" data-year="3" title="Bases de Datos">BDD</div>
+                <div class="card year-3" data-year="3" title="Desarrollo de Software">DDS</div>
+                <div class="card year-3" data-year="3" title="Comunicación de Datos">CDD</div>
+                <div class="card year-3" data-year="3" title="Análisis Numérico">ANU</div>
+                <div class="card year-3" data-year="3" title="Diseño de Sistemas de Información">DSI</div>
+                <div class="card year-3" data-year="3" title="Seminario Integrador">SI</div>
+                <div class="card year-4" data-year="4" title="Legislación">LEG</div>
+                <div class="card year-4" data-year="4" title="Ingeniería y Calidad de Software">ICS</div>
+                <div class="card year-4" data-year="4" title="Redes de Datos">RED</div>
+                <div class="card year-4" data-year="4" title="Investigación Operativa">IO</div>
+                <div class="card year-4" data-year="4" title="Simulación">SIM</div>
+                <div class="card year-4" data-year="4" title="Tecnologías para la Automatización">TPA</div>
+                <div class="card year-4" data-year="4" title="Administración de Sistemas de Información">ADSI</div>
+                <div class="card year-5" data-year="5" title="Inteligencia Artificial">IA</div>
+                <div class="card year-5" data-year="5" title="Ciencia de Datos">CDA</div>
+                <div class="card year-5" data-year="5" title="Sistemas de Gestión">SDG</div>
+                <div class="card year-5" data-year="5" title="Gestión Gerencial">GGE</div>
+                <div class="card year-5" data-year="5" title="Seguridad en los Sistemas de Información">SSI</div>
+                <div class="card year-5" data-year="5" title="Proyecto Final">PF</div>
+            </div>
+        </div>
+
+        <div class="column">
+            <h2>Regular</h2>
+            <div class="card-list" id="regular"></div>
+        </div>
+
+        <div class="column">
+            <h2>Rendida</h2>
+            <div class="card-list" id="rendida"></div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="carrera.js"></script>
+</body>
+</html>

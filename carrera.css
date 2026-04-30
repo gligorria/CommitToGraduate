@@ -1,0 +1,149 @@
+/* --- Variables de Estilo Moderno --- */
+:root {
+    --bg-dark: #0f172a;
+    --bg-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #38bdf8;
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* 1. Estética General & Fondo (Punto 1) */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-primary);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Evita scroll general */
+}
+
+header {
+    background: transparent;
+    padding: 20px 15px;
+    text-align: center;
+}
+
+#progress-text {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display: block;
+    color: var(--accent);
+    margin-top: 5px;
+}
+
+/* 2. Tablero Grid Fijo */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 10px 15px 20px 15px;
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+}
+
+/* 3. Columnas Glassmorphism (Punto 1) */
+.column {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.column h2 {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* 4. Scroll Interno por Columna */
+.card-list {
+    padding: 10px;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* Scrollbar para Chrome/Safari */
+.card-list::-webkit-scrollbar { width: 4px; }
+.card-list::-webkit-scrollbar-thumb { 
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px; 
+}
+
+/* 5. Tarjetas con Micro-interacciones (Punto 3) */
+.card {
+    padding: 14px 4px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-align: center;
+    cursor: grab;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    will-change: transform, opacity;
+    transition: box-shadow 0.2s ease;
+}
+
+/* Sombras dinámicas al levantar la tarjeta */
+.sortable-chosen {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5) !important;
+}
+
+.sortable-ghost {
+    opacity: 0.15;
+    background: #000 !important;
+}
+
+/* 6. Colores por año (Manteniendo tus tonos pero más vibrantes para fondo oscuro) */
+.year-1 { background-color: #ffadad; color: #4a0e0e; }
+.year-2 { background-color: #ffd6a5; color: #4d330a; }
+.year-3 { background-color: #fdffb6; color: #4d4d0a; }
+.year-4 { background-color: #caffbf; color: #0e3d14; }
+.year-5 { background-color: #9bf6ff; color: #0a3a40; }
+
+/* 7. Estado Rendida */
+#rendida .card {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    filter: saturate(1.2);
+}
+
+/* 8. Celebración Final */
+.goal-reached {
+    color: #2ecc71 !important;
+    text-shadow: 0 0 15px rgba(46, 204, 113, 0.6);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(1.05);
+}
+
+/* Ajustes Mobile */
+@media (max-width: 600px) {
+    .board { gap: 6px; padding: 8px; }
+    .card { font-size: 0.75rem; padding: 10px 2px; margin-bottom: 8px; }
+    .column h2 { font-size: 0.65rem; padding: 10px 5px; }
+    header h1 { font-size: 1.3rem; }
+}
