@@ -95,6 +95,9 @@ header {
 }
 
 /* 5. Tarjetas con Micro-interacciones (Punto 3) */
+/* 4. Corregir el desplazamiento del "reflejo" */
+/* Si ves la tarjeta desplazada respecto a tu dedo, 
+   asegúrate de que no haya transiciones de CSS que interfieran con Sortable */
 .card {
     padding: 14px 4px;
     margin-bottom: 10px;
@@ -107,16 +110,32 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     will-change: transform, opacity;
     transition: box-shadow 0.2s ease;
+    user-select: none;
+    -webkit-user-drag: none; /* Evita conflictos con el drag nativo del navegador */
+    touch-action: none;      /* Ayuda a que el navegador ceda el control total a Sortable */
 }
 
 /* Sombras dinámicas al levantar la tarjeta */
+/* 1. La tarjeta que llevas bajo el dedo (Chosen) */
 .sortable-chosen {
+    opacity: 1 !important; /* Que no se vuelva transparente */
     box-shadow: 0 15px 30px rgba(0,0,0,0.5) !important;
+    cursor: grabbing;
 }
 
+/* 2. El "fantasma" que queda en la lista original mientras arrastras */
 .sortable-ghost {
-    opacity: 0.15;
-    background: #000 !important;
+    opacity: 0.2 !important; /* Casi invisible para que no parezca un duplicado */
+    background: rgba(0,0,0,0.1) !important; /* Un tono neutro suave */
+    border: 1px dashed rgba(255,255,255,0.2) !important;
+}
+
+/* 3. Evitar el cambio de color al arrastrar */
+/* SortableJS a veces hereda estilos del contenedor. 
+   Forzamos a que la card mantenga su color de año. */
+.card.sortable-chosen {
+    background-color: inherit !important; 
+    color: inherit !important;
 }
 
 /* 6. Colores por año (Manteniendo tus tonos pero más vibrantes para fondo oscuro) */
