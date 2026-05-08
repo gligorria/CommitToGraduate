@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         new Sortable(document.getElementById(id), {
             group: 'plan',
             animation: 150,
-            delay: 50, // Reducido de 100 a 50 para que sea más ágil
+            delay: 100,
             delayOnTouchOnly: true,
             touchStartThreshold: 5, // Permite un pequeño margen de movimiento antes de cancelar el drag
             

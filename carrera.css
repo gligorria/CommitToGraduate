@@ -116,27 +116,18 @@ header {
 }
 
 /* Sombras dinámicas al levantar la tarjeta */
-/* 1. La tarjeta que llevas bajo el dedo (Chosen) */
-.sortable-chosen {
-    opacity: 1 !important; /* Que no se vuelva transparente */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.5) !important;
-    cursor: grabbing;
-}
-
-/* 2. El "fantasma" que queda en la lista original mientras arrastras */
-.sortable-ghost {
-    opacity: 0.2 !important; /* Casi invisible para que no parezca un duplicado */
-    background: rgba(0,0,0,0.1) !important; /* Un tono neutro suave */
-    border: 1px dashed rgba(255,255,255,0.2) !important;
-}
-
-/* 3. Evitar el cambio de color al arrastrar */
-/* SortableJS a veces hereda estilos del contenedor. 
-   Forzamos a que la card mantenga su color de año. */
+/* 1. La tarjeta que llevas bajo el dedo (Chosen) - ocultar para usar sólo el fantasma */
 .card.sortable-chosen {
-    background-color: inherit !important; 
-    color: inherit !important;
+
+    box-shadow: none !important;
+    cursor: grabbing;
+    pointer-events: none;
 }
+
+/* 2. El "fantasma" que queda en la lista original mientras arrastras 
+.sortable-ghost {
+   opacity: 0.15;
+}*/
 
 /* 6. Colores por año (Manteniendo tus tonos pero más vibrantes para fondo oscuro) */
 .year-1 { background-color: #ffadad; color: #4a0e0e; }
