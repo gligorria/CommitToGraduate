@@ -1,0 +1,8 @@
+{
+  "expo": {
+    "name": "CommitToGraduate",
+    "slug": "commit-to-graduate",
+    "platforms": ["ios", "android", "web"],
+    "version": "1.0.0"
+  }
+}
